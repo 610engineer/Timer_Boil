@@ -9,10 +9,13 @@
     <TextView
         android:id="@+id/showTimer"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="64dp"
+        android:gravity="center_vertical"
         android:text="@string/timerZero"
-        android:textSize="72sp"
+        android:textSize="80sp"
+        android:typeface="normal"
+        app:autoSizeTextType="none"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/objectName" />
@@ -21,7 +24,7 @@
         android:id="@+id/objectName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
+        android:layout_marginTop="32dp"
         android:text="@string/objectName"
         android:textSize="36sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,12 +35,12 @@
         android:id="@+id/startTimer"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/start"
         android:scrollbarSize="4dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showTimer"
+        app:layout_constraintTop_toBottomOf="@+id/minute_down"
         app:srcCompat="@drawable/ic_start_timer"
         tools:visibility="visible" />
 
@@ -45,11 +48,11 @@
         android:id="@+id/pauseTimer"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:contentDescription="@string/stop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/showTimer"
+        app:layout_constraintTop_toBottomOf="@+id/minute_down"
         app:srcCompat="@drawable/ic_pause_timer"
         tools:visibility="invisible" />
 
@@ -74,4 +77,58 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/minute_up"
+        android:layout_width="48dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:layout_marginTop="56dp"
+        android:contentDescription="@string/minute_up"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objectName"
+        app:srcCompat="@drawable/ic_up" />
+
+    <ImageView
+        android:id="@+id/second_up"
+        android:layout_width="48dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:contentDescription="@string/second_up"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/objectName"
+        app:srcCompat="@drawable/ic_up" />
+
+    <ImageView
+        android:id="@+id/minute_down"
+        android:layout_width="48dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="128dp"
+        android:layout_marginLeft="128dp"
+        android:contentDescription="@string/minute_down"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showTimer"
+        app:srcCompat="@drawable/ic_down" />
+
+    <ImageView
+        android:id="@+id/second_down"
+        android:layout_width="48dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="128dp"
+        android:layout_marginRight="128dp"
+        android:contentDescription="@string/second_down"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showTimer"
+        app:srcCompat="@drawable/ic_down" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintGuide_begin="128dp" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -3,6 +3,11 @@ package com.example.timer_boil;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.media.AudioAttributes;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
+import android.media.SoundPool;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Vibrator;
@@ -13,6 +18,10 @@ import android.widget.TextView;
 
 import java.util.Locale;
 
+import static android.media.AudioManager.STREAM_MUSIC;
+import static com.example.timer_boil.R.raw.*;
+import static com.example.timer_boil.R.raw.bell;
+
 
 public class Timer_function extends AppCompatActivity {
     private TextView mTextViewCountDown;
@@ -20,10 +29,16 @@ public class Timer_function extends AppCompatActivity {
     private ImageView mImageViewPause;
     private Button mButtonReset;
     private Button mButtonList;
+    private ImageView mMinuteUp;
+    private ImageView mMinuteDown;
+    private ImageView mSecondUp;
+    private ImageView mSecondDown;
     private CountDownTimer mCountDownTimer;
     private Vibrator vibrator;
+    private SoundPool mSoundPool;
+    int mp3;
 
-    private static long start_time=10000;
+    private static long start_time=0;
     private long mTimeLeft = start_time;
     private int time_gap;
 
@@ -45,13 +60,21 @@ public class Timer_function extends AppCompatActivity {
         mImageViewStart.setVisibility(View.VISIBLE);        //show start icon
         mImageViewPause.setVisibility(View.INVISIBLE);       //hide pause icon
         mButtonReset.setVisibility(View.INVISIBLE);            //hide reset icon
+        mMinuteUp = findViewById(R.id.minute_up);           //start_time +600000 msec
+        mMinuteDown = findViewById(R.id.minute_down);       //start_time -600000 msec
+        mSecondUp = findViewById(R.id.second_up);           //start_time +10000 msec
+        mSecondDown = findViewById(R.id.second_down);       //start_time -10000 msec
 
         mImageViewStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 mImageViewStart.setVisibility(View.INVISIBLE);        //hide start icon
                 mImageViewPause.setVisibility(View.VISIBLE);           //show pause icon
-                mButtonReset.setVisibility(View.VISIBLE);            //hide reset icon
+                mButtonReset.setVisibility(View.INVISIBLE);            //hide reset icon
+                mMinuteUp.setVisibility(View.INVISIBLE);
+                mMinuteDown.setVisibility(View.INVISIBLE);
+                mSecondUp.setVisibility(View.INVISIBLE);
+                mSecondDown.setVisibility(View.INVISIBLE);
 
                 mCountDownTimer = new CountDownTimer(mTimeLeft,1000) {
                     @Override
@@ -76,6 +99,7 @@ public class Timer_function extends AppCompatActivity {
                             long vibratePattern[] = {500,1000,500,1000};
                             vibrator.vibrate(vibratePattern,1);
                         }
+                        //mSoundPool.play(mp3,1f,11f,0,-1,1f);
 
                     }
                 }.start();
@@ -101,6 +125,10 @@ public class Timer_function extends AppCompatActivity {
                 mImageViewStart.setVisibility(View.VISIBLE);        //show start icon
                 mImageViewPause.setVisibility(View.INVISIBLE);       //hide pause icon
                 mButtonReset.setVisibility(View.INVISIBLE);            //hide reset icon
+                mMinuteUp.setVisibility(View.VISIBLE);
+                mMinuteDown.setVisibility(View.VISIBLE);
+                mSecondUp.setVisibility(View.VISIBLE);
+                mSecondDown.setVisibility(View.VISIBLE);
             }
         });
 
@@ -114,12 +142,47 @@ public class Timer_function extends AppCompatActivity {
             }
         });
 
+        mMinuteUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_time += 60000;
+                mTimeLeft = start_time;
+                updateCountDownText();
+            }
+        });
 
+        mSecondUp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_time += 10000;
+                mTimeLeft = start_time;
+                updateCountDownText();
+            }
+        });
 
+        mMinuteDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_time -= 60000;
+                if(start_time <= 0){
+                    start_time = 0;
+                }
+                mTimeLeft = start_time;
+                updateCountDownText();
+            }
+        });
 
-
-
-
+        mSecondDown.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                start_time -= 10000;
+                if(start_time <= 0){
+                    start_time = 0;
+                }
+                mTimeLeft = start_time;
+                updateCountDownText();
+            }
+        });
     }
 
     private void updateCountDownText(){

@@ -7,4 +7,9 @@
     <string name="start">start</string>
     <string name="stop">stop</string>
     <string name="timer">Timer</string>
+    <string name="todo">TODO</string>
+    <string name="minute_up">minute_up</string>
+    <string name="second_up">second_up</string>
+    <string name="second_down">second_down</string>
+    <string name="minute_down">minute_down</string>
 </resources>
