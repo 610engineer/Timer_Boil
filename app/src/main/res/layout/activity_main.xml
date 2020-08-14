@@ -6,15 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <Button
         android:id="@+id/move_timer"
         android:layout_width="0dp"
@@ -25,5 +16,104 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <TableLayout
+        android:id="@+id/tblmenu"
+        android:layout_width="match_parent"
+        android:layout_height="416dp"
+        app:layout_constraintBottom_toTopOf="@+id/move_timer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            >
+
+            <ImageView
+                android:id="@+id/img_broccoli"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/bloccoli_image"
+                app:srcCompat="@drawable/broccoli" />
+
+            <ImageView
+                android:id="@+id/img_gombo"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/gombo_image"
+                app:srcCompat="@drawable/gombo" />
+
+            <ImageView
+                android:id="@+id/img_asparagus"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/asparagus_image"
+                app:srcCompat="@drawable/asparagus" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+           >
+
+            <ImageView
+                android:id="@+id/img_com"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/com_image"
+                app:srcCompat="@drawable/vegetable_corn" />
+
+            <ImageView
+                android:id="@+id/img_moyashi"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/moyashi_image"
+                app:srcCompat="@drawable/moyashi" />
+
+            <ImageView
+                android:id="@+id/img_spinach"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/spinach_image"
+                app:srcCompat="@drawable/spinach" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="0dp"
+            >
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+            <ImageView
+                android:id="@+id/img_egg"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:contentDescription="@string/egg_image"
+                app:srcCompat="@drawable/egg" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"/>
+
+        </TableRow>
+
+    </TableLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

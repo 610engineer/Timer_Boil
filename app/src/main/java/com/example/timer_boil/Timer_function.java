@@ -25,6 +25,7 @@ import static com.example.timer_boil.R.raw.bell;
 
 public class Timer_function extends AppCompatActivity {
     private TextView mTextViewCountDown;
+    private TextView mObNeme;
     private ImageView mImageViewStart;
     private ImageView mImageViewPause;
     private Button mButtonReset;
@@ -50,7 +51,7 @@ public class Timer_function extends AppCompatActivity {
         setContentView(R.layout.activity_timer_function);
 
         vibrator = (Vibrator) getSystemService(VIBRATOR_SERVICE);
-
+        mObNeme= findViewById(R.id.objectName);
         mTextViewCountDown = findViewById(R.id.showTimer);
         mImageViewStart = findViewById(R.id.startTimer);
         mImageViewPause = findViewById(R.id.pauseTimer);
@@ -64,6 +65,13 @@ public class Timer_function extends AppCompatActivity {
         mMinuteDown = findViewById(R.id.minute_down);       //start_time -600000 msec
         mSecondUp = findViewById(R.id.second_up);           //start_time +10000 msec
         mSecondDown = findViewById(R.id.second_down);       //start_time -10000 msec
+
+        Intent intent = getIntent();
+        start_time = intent.getIntExtra("timerList",0);
+        mObNeme.setText(intent.getStringExtra("obList"));
+        mTimeLeft = start_time;
+        updateCountDownText();
+
 
         mImageViewStart.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -136,8 +144,7 @@ public class Timer_function extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 vibrator.cancel();
-                Intent intent = new Intent(Timer_function.this,  MainActivity.class);
-                startActivity(intent);
+                finish();
 
             }
         });

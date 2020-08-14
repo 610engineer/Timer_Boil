@@ -12,4 +12,12 @@
     <string name="second_up">second_up</string>
     <string name="second_down">second_down</string>
     <string name="minute_down">minute_down</string>
+    <string name="bloccoli_image">bloccoli_image</string>
+    <string name="gombo_image">gombo_image</string>
+    <string name="asparagus_image">asparagus_image</string>
+    <string name="com_image">com_image</string>
+    <string name="moyashi_image">moyashi_image</string>
+    <string name="spinach_image">spinach_image</string>
+    <string name="egg_image" />
+    <string name ="eggSelect">固さを選んでください</string>
 </resources>
