@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.timer_boil">
+    package="com.jour1.timer_boil">
 
     <uses-permission android:name="android.permission.VIBRATE" />
     <application
@@ -9,15 +9,20 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
-        <activity android:name=".Timer_function"></activity>
-        <activity android:name=".MainActivity">
+        android:theme="@style/Theme.AppCompat.Light.NoActionBar">
+        <activity android:name="com.jour1.timer_boil.Timer_function"></activity>
+        <activity android:name="com.jour1.timer_boil.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <!-- Sample AdMob App ID: ca-app-pub-3940256099942544~3347511713 -->
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-8074337770259446~3513071774
+"/>
     </application>
 
 </manifest>

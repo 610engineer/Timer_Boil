@@ -1,12 +1,12 @@
 <resources>
     <string name="app_name">Timer_Boil</string>
     <string name="timerZero">00:00</string>
-    <string name="objectName">No Selected</string>
+    <string name="objectName">未選択</string>
     <string name="btn_reset">Reset</string>
-    <string name="btn_list">Boil List</string>
+    <string name="btn_list">リスト</string>
     <string name="start">start</string>
     <string name="stop">stop</string>
-    <string name="timer">Timer</string>
+    <string name="timer">タイマー</string>
     <string name="todo">TODO</string>
     <string name="minute_up">minute_up</string>
     <string name="second_up">second_up</string>
@@ -20,4 +20,5 @@
     <string name="spinach_image">spinach_image</string>
     <string name="egg_image" />
     <string name ="eggSelect">固さを選んでください</string>
+    <string name="boil_select">ゆでる物を選んでください</string>
 </resources>

@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#fffacd"
     tools:context=".Timer_function">
 
     <TextView
@@ -35,11 +36,13 @@
         android:id="@+id/startTimer"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:contentDescription="@string/start"
+
         android:scrollbarSize="4dp"
         app:layout_constraintBottom_toTopOf="@+id/btn_list"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.501"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@drawable/ic_start_timer"
         tools:visibility="visible" />
@@ -48,7 +51,7 @@
         android:id="@+id/pauseTimer"
         android:layout_width="72dp"
         android:layout_height="72dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="24dp"
         android:contentDescription="@string/stop"
         app:layout_constraintBottom_toTopOf="@+id/btn_list"
         app:layout_constraintEnd_toEndOf="parent"
@@ -60,8 +63,10 @@
         android:id="@+id/btn_reset"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="#0000ff"
         android:text="@string/btn_reset"
+        android:textColor="#ffffff"
         app:layout_constraintBottom_toTopOf="@+id/startTimer"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -71,10 +76,12 @@
         android:id="@+id/btn_list"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="16dp"
+        android:background="#ff8c00"
         android:text="@string/btn_list"
+        android:textColor="#ffffff"
         android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/adView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -82,7 +89,7 @@
         android:id="@+id/minute_up"
         android:layout_width="48dp"
         android:layout_height="32dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="96dp"
         android:contentDescription="@string/minute_up"
         app:layout_constraintEnd_toStartOf="@+id/showTimer"
         app:layout_constraintTop_toBottomOf="@+id/objectName"
@@ -92,7 +99,7 @@
         android:id="@+id/second_up"
         android:layout_width="48dp"
         android:layout_height="32dp"
-        android:layout_marginTop="88dp"
+        android:layout_marginTop="96dp"
         android:contentDescription="@string/second_up"
         app:layout_constraintStart_toEndOf="@+id/showTimer"
         app:layout_constraintTop_toBottomOf="@+id/objectName"
@@ -147,5 +154,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:barrierDirection="left" />
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-8074337770259446/2575394629"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent">
+
+    </com.google.android.gms.ads.AdView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
