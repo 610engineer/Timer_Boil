@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Timer_Boil</string>
+    <string name="app_name">ゆで時計</string>
     <string name="timerZero">00:00</string>
     <string name="objectName">未選択</string>
     <string name="btn_reset">Reset</string>

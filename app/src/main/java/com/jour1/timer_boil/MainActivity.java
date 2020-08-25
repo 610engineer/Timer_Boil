@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         timerList.add(120000);      //asparagus
-        timerList.add(150000);      //broccoli
+        timerList.add(110000);      //broccoli
         timerList.add(105000);      //gombo
         timerList.add(30000);       //moyashi
         timerList.add(60000);       //spinach

@@ -163,6 +163,7 @@ public class Timer_function extends AppCompatActivity {
                 mSoundPool.release();
                 mTimeLeft = start_time;
                 updateCountDownText();
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                 mImageViewStart.setVisibility(View.VISIBLE);        //show start icon
                 mImageViewPause.setVisibility(View.INVISIBLE);       //hide pause icon
                 mButtonReset.setVisibility(View.INVISIBLE);            //hide reset icon
@@ -176,6 +177,7 @@ public class Timer_function extends AppCompatActivity {
         mButtonList.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                getWindow().clearFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
                 finish();
 
             }
